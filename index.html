@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">TaskMaster</div>
+    <nav class="nav">
+      <button class="btn" id="addTaskBtn">Add Task</button>
+      <button class="btn" id="filterBtn">Filter</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="dashboard">
+    <section class="task-column" id="todo">
+      <h2 class="column-title">To-Do</h2>
+      <div class="task-card" data-priority="High">
+        <h3>Design Wireframes</h3>
+        <p>Prepare wireframes for the new app interface.</p>
+        <span class="task-meta">Due: Nov 20, 2024 | Priority: High</span>
+      </div>
+    </section>
+
+    <section class="task-column" id="in-progress">
+      <h2 class="column-title">In Progress</h2>
+    </section>
+
+    <section class="task-column" id="completed">
+      <h2 class="column-title">Completed</h2>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>TaskMaster © 2024 | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+  </footer>
+
+  <!-- Add Task Modal -->
+  <div class="modal" id="addTaskModal">
+    <div class="modal-content">
+      <h2>Add New Task</h2>
+      <form id="taskForm">
+        <label for="taskTitle">Task Title:</label>
+        <input type="text" id="taskTitle" required>
+        
+        <label for="taskDesc">Description:</label>
+        <textarea id="taskDesc" rows="3" required></textarea>
+        
+        <label for="taskPriority">Priority:</label>
+        <select id="taskPriority" required>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <label for="taskCategory">Category:</label>
+        <select id="taskCategory" required>
+          <option value="todo">To-Do</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <button type="submit" class="btn">Add Task</button>
+      </form>
+      <button class="btn close-btn" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <!-- Filter Dropdown -->
+  <div class="filter-dropdown" id="filterDropdown">
+    <label for="filterPriority">Filter by Priority:</label>
+    <select id="filterPriority">
+      <option value="all">All</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
